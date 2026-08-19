@@ -4,10 +4,10 @@ public class CuentaBancaria {
     private String titular;
     private double saldo;
 
-    public CuentaBancaria(double saldo, String titular, String numeroCuenta) {
-        this.saldo = saldo;
-        this.titular = titular;
+    public CuentaBancaria(String numeroCuenta, String titular, double saldo) {
         this.numeroCuenta = numeroCuenta;
+        this.titular = titular;
+        this.saldo = saldo;
     }
 
     public String getNumeroCuenta() {
@@ -27,9 +27,9 @@ public class CuentaBancaria {
     }
 
     public String describir() {
-        return "Cuenta " + numeroCuenta +
-                " · Titular: " + titular +
-                " · Saldo: $" + saldo;
+        return "Cuenta " + numeroCuenta
+                + " · Titular: " + titular
+                + " · Saldo: $" + saldo;
     }
 
     public double calcularComision() {
@@ -39,5 +39,4 @@ public class CuentaBancaria {
     public void realizarRetiro(double monto) {
         setSaldo(getSaldo() - monto);
     }
-
 }
